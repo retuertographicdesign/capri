@@ -1211,6 +1211,7 @@
         email: '',
         subject: t.email_subject_reserve + ' - ' + name,
         message:
+          t.email_subject_reserve + '\n\n' +
           t.form_people + ': ' + people + '\n' +
           t.form_date + ': ' + date + '\n' +
           t.form_time + ': ' + time + '\n' +
@@ -1234,6 +1235,7 @@
         email: contact.includes('@') ? contact : '',
         subject: t.email_subject_order + ' - ' + name,
         message:
+          t.email_subject_order + '\n\n' +
           t.order_contact + ': ' + contact + '\n' +
           t.order_products + ': ' + products + '\n' +
           t.form_message + ': ' + (message || '-'),
