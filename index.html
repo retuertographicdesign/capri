@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Capricho de Costa del Silencio · Gourmet, Catas &amp; Tienda</title>
+<meta name="description" content="El Capricho de Costa del Silencio: tienda gourmet con catas y degustaciones de jamón ibérico, quesos, conservas y vinos escogidos en Tenerife.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2314192B'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='54' fill='%23C9A227' font-family='Georgia,serif'%3EC%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#14192B;
+    --ink-2:#0C1020;
+    --gold:#C9A227;
+    --gold-light:#E3C468;
+    --cream:#F7F1E4;
+    --cream-2:#EFE1BF;
+    --paper:#FFFCF6;
+    --text-soft:#5c5644;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Poppins',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  .script{font-family:'Alex Brush',cursive;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .btn{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--ink);
+    font-weight:700;
+    padding:14px 32px;
+    border-radius:40px;
+    letter-spacing:.02em;
+    box-shadow:0 10px 24px rgba(201,162,39,.35);
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    border:none;
+    cursor:pointer;
+    font-family:'Poppins',sans-serif;
+    font-size:.95rem;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(201,162,39,.45);background:var(--gold-light);}
+  .btn.outline{
+    background:transparent;
+    border:2px solid var(--gold);
+    color:var(--gold);
+    box-shadow:none;
+  }
+  .btn.outline:hover{background:var(--gold);color:var(--ink);}
+  .btn.ghost{
+    background:transparent;border:2px solid rgba(20,25,43,.25);color:var(--ink);box-shadow:none;
+  }
+  .btn.ghost:hover{background:var(--ink);color:var(--cream);border-color:var(--ink);}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    font-size:.76rem;
+    font-weight:700;
+    color:var(--gold);
+  }
+  h2.section-title{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2rem,4vw,2.9rem);
+    font-weight:800;
+    line-height:1.1;
+    margin:.4rem 0 1rem;
+  }
+  h2.section-title .accent{
+    display:block;
+    font-family:'Alex Brush',cursive;
+    font-weight:400;
+    color:var(--gold);
+    font-size:1.5em;
+    margin-top:.05em;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(20,25,43,0);
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:16px 0;
+  }
+  header.scrolled{
+    background:rgba(255,252,246,.97);
+    box-shadow:0 4px 24px rgba(0,0,0,.1);
+    padding:8px 0;
+    backdrop-filter:blur(6px);
+  }
+  nav{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .badge{
+    background:var(--cream);
+    border-radius:50%;
+    width:56px;height:56px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,.15);
+    flex:none;
+    transition:width .3s ease,height .3s ease;
+    padding:6px;
+  }
+  header.scrolled .brand .badge{width:46px;height:46px;}
+  .brand .badge img{width:100%;height:100%;object-fit:contain;}
+  .brand-text{display:none;}
+  .nav-links{display:flex;gap:30px;align-items:center;}
+  .nav-links a{font-weight:600;font-size:.92rem;position:relative;padding:4px 0;color:#fff;transition:color .35s ease;letter-spacing:.02em;}
+  header.scrolled .nav-links a{color:var(--ink);}
+  .nav-links a::after{
+    content:'';position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--gold);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-links a.btn{padding:11px 24px;color:var(--ink)!important;}
+  .nav-links a.btn::after{display:none;}
+  .burger{display:none;background:none;border:none;font-size:1.6rem;color:var(--gold);cursor:pointer;}
+
+  @media (max-width:900px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;height:100vh;width:min(78vw,320px);
+      background:var(--paper);flex-direction:column;justify-content:center;
+      align-items:flex-start;padding:0 40px;gap:24px;
+      transform:translateX(100%);transition:transform .35s ease;
+      box-shadow:-10px 0 30px rgba(0,0,0,.15);
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a:not(.btn){color:var(--ink);}
+    .nav-links a.btn{margin-top:10px;}
+    .burger{display:block;z-index:110;}
+    .lang-switch{order:-1;margin-right:auto;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:linear-gradient(180deg, rgba(12,16,32,.55), rgba(12,16,32,.78)), url('img/storefront.jpg') center 60%/cover no-repeat;
+  }
+  .hero .wrap{position:relative;z-index:2;padding-top:110px;}
+  .hero-tag{
+    display:inline-flex;align-items:center;gap:10px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(201,162,39,.5);
+    color:var(--gold-light);padding:8px 18px;border-radius:30px;
+    font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    backdrop-filter:blur(4px);
+  }
+  .hero h1{
+    color:#fff;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.4rem,6vw,4.2rem);
+    font-weight:800;
+    line-height:1.08;
+    margin:24px 0 10px;
+    text-shadow:0 6px 30px rgba(0,0,0,.4);
+  }
+  .hero h1 .script{
+    display:block;
+    font-family:'Alex Brush',cursive;
+    font-weight:400;
+    font-size:1.15em;
+    color:var(--gold-light);
+    margin-top:8px;
+  }
+  .hero p{
+    color:rgba(255,255,255,.85);
+    font-size:1.1rem;
+    max-width:520px;
+    margin-bottom:34px;
+    line-height:1.7;
+  }
+  .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-badges{display:flex;gap:14px;margin-top:38px;flex-wrap:wrap;}
+  .hero-badges span{
+    display:flex;align-items:center;gap:8px;
+    color:rgba(255,255,255,.75);font-size:.82rem;font-weight:500;
+  }
+  .scroll-cue{
+    position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+    color:#fff;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+    display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.85;
+  }
+  .scroll-cue span{width:1px;height:34px;background:var(--gold);display:block;animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:.2;}50%{opacity:1;}}
+
+  /* ---------- INTRO / SOBRE NOSOTROS ---------- */
+  .intro{padding:120px 0 100px;background:var(--paper);}
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .intro-media{position:relative;border-radius:18px;overflow:hidden;}
+  .intro-media img{border-radius:18px;aspect-ratio:4/5;object-fit:cover;}
+  .intro-media .float-card{
+    position:absolute;bottom:-26px;right:-26px;
+    background:var(--ink);
+    color:#fff;
+    padding:22px 26px;
+    border-radius:16px;
+    box-shadow:0 16px 34px rgba(20,25,43,.35);
+    max-width:220px;
+    border:1px solid rgba(201,162,39,.4);
+  }
+  .intro-media .float-card strong{display:block;font-family:'Playfair Display',serif;font-size:1.8rem;line-height:1;color:var(--gold-light);}
+  .intro-media .float-card span{font-size:.78rem;letter-spacing:.05em;opacity:.85;}
+  .intro-text p{color:var(--text-soft);font-size:1.05rem;line-height:1.85;margin-bottom:18px;}
+  .intro-points{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px;}
+  .intro-points li{display:flex;gap:12px;align-items:flex-start;font-weight:600;font-size:.9rem;color:var(--ink);}
+  .intro-points li .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);margin-top:6px;flex:none;}
+
+  @media (max-width:900px){
+    .intro-grid{grid-template-columns:1fr;gap:60px;}
+    .intro-media{order:-1;}
+    .intro-media .float-card{right:16px;bottom:-20px;}
+  }
+
+  /* ---------- SELECCIÓN ---------- */
+  .seleccion{background:var(--ink);color:#fff;padding:110px 0;position:relative;}
+  .seleccion::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 15% 15%, rgba(201,162,39,.08), transparent 40%);
+    pointer-events:none;
+  }
+  .seleccion .eyebrow{color:var(--gold-light);}
+  .seleccion h2{color:#fff;}
+  .seleccion h2 .accent{color:var(--gold-light);}
+  .sel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:54px;}
+  .sel-card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(201,162,39,.25);
+    border-radius:18px;overflow:hidden;
+    transition:transform .25s ease, background .25s ease, border-color .25s ease;
+  }
+  .sel-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.07);border-color:var(--gold);}
+  .sel-card .thumb{aspect-ratio:4/3;overflow:hidden;}
+  .sel-card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .sel-card:hover .thumb img{transform:scale(1.07);}
+  .sel-card .body{padding:24px 26px 28px;}
+  .sel-card h3{font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:10px;color:var(--gold-light);}
+  .sel-card p{color:rgba(255,255,255,.72);font-size:.92rem;line-height:1.7;}
+  @media (max-width:900px){.sel-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.sel-grid{grid-template-columns:1fr;}}
+
+  /* ---------- CARTA (live menu) ---------- */
+  .carta{background:var(--ink);color:#fff;padding:110px 0;position:relative;}
+  .carta::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at 85% 10%, rgba(201,162,39,.08), transparent 40%);
+    pointer-events:none;
+  }
+  .carta .eyebrow{color:var(--gold-light);}
+  .carta h2{color:#fff;}
+  .carta h2 .accent{color:var(--gold-light);}
+  .carta-sub{color:rgba(255,255,255,.6);font-size:.92rem;margin-top:-4px;margin-bottom:10px;max-width:560px;}
+  .menu-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px;margin-bottom:36px;position:relative;}
+  .menu-tab{
+    background:rgba(255,255,255,.06);border:1px solid rgba(201,162,39,.25);color:rgba(255,255,255,.8);
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem;padding:9px 18px;border-radius:30px;
+    cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease;
+  }
+  .menu-tab:hover{background:rgba(255,255,255,.12);}
+  .menu-tab.active{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .menu-panel{
+    background:var(--paper);border-radius:20px;padding:8px 34px;
+    box-shadow:0 24px 50px rgba(0,0,0,.25);position:relative;min-height:120px;
+  }
+  .menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px dashed rgba(20,25,43,.15);}
+  .menu-item:last-child{border-bottom:none;}
+  .menu-item .mi-name{font-weight:600;color:var(--ink);font-size:.95rem;}
+  .menu-item .mi-price{font-weight:800;color:var(--gold);white-space:nowrap;font-size:.95rem;}
+  .menu-loading{color:rgba(255,255,255,.55);font-size:.9rem;padding:20px 0;}
+  .menu-foot{text-align:center;margin-top:30px;}
+  .menu-foot a{color:var(--gold-light);font-weight:600;font-size:.88rem;border-bottom:1px solid rgba(227,196,104,.5);padding-bottom:2px;}
+  .menu-foot a:hover{color:#fff;}
+  @media (max-width:600px){.menu-panel{padding:6px 18px;}}
+
+  /* ---------- GALERÍA ---------- */
+  .gallery{padding:120px 0 100px;background:var(--cream);}
+  .gallery-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:50px;}
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:16px;}
+  .gallery-grid a{position:relative;border-radius:14px;overflow:hidden;display:block;}
+  .gallery-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .gallery-grid a:hover img{transform:scale(1.08);}
+  .gallery-grid a::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,.5));
+    opacity:0;transition:opacity .3s ease;
+  }
+  .gallery-grid a:hover::after{opacity:1;}
+  .g1{grid-column:span 2;grid-row:span 2;}
+  .g5{grid-column:span 2;}
+  @media (max-width:900px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px;}
+    .g1{grid-column:span 2;grid-row:span 1;}
+    .g5{grid-column:span 1;}
+  }
+
+  .lightbox{
+    position:fixed;inset:0;background:rgba(12,16,32,.94);
+    display:flex;align-items:center;justify-content:center;
+    z-index:200;opacity:0;pointer-events:none;transition:opacity .3s ease;padding:30px;
+  }
+  .lightbox.open{opacity:1;pointer-events:auto;}
+  .lightbox img{max-width:min(900px,90vw);max-height:85vh;border-radius:12px;box-shadow:0 30px 60px rgba(0,0,0,.5);}
+  .lightbox-close{position:absolute;top:26px;right:32px;color:#fff;font-size:2rem;cursor:pointer;line-height:1;background:none;border:none;}
+
+  /* ---------- CONTACTO / RESERVAS ---------- */
+  .contact{background:var(--paper);padding:120px 0 100px;}
+  .contact-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+  .contact-head .eyebrow{justify-content:center;display:flex;}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .quick-actions{display:flex;flex-direction:column;gap:14px;margin-bottom:34px;}
+  .quick-actions .btn{width:100%;text-align:center;}
+  .info-list{display:flex;flex-direction:column;gap:20px;margin-bottom:28px;}
+  .info-list li{display:flex;gap:14px;align-items:flex-start;}
+  .info-list .ic{
+    width:42px;height:42px;border-radius:50%;background:var(--ink);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .info-list strong{display:block;font-size:.92rem;margin-bottom:2px;}
+  .info-list span, .info-list a{color:var(--text-soft);font-size:.88rem;line-height:1.6;}
+  .info-list a.go{color:var(--gold);font-weight:700;}
+  .hours-grid{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin-top:2px;}
+  .hours-grid span:nth-child(odd){color:#8a7f68;}
+  .hours-grid span.closed{color:#b0a68f;font-style:italic;}
+  .socials{display:flex;gap:14px;}
+  .socials a{
+    width:40px;height:40px;border-radius:50%;border:1px solid rgba(20,25,43,.2);
+    display:flex;align-items:center;justify-content:center;color:var(--ink);
+    transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+  }
+  .socials a svg{width:17px;height:17px;}
+  .socials a:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);transform:translateY(-3px);}
+
+  .form-card{background:var(--ink);border-radius:22px;padding:36px;color:#fff;box-shadow:0 24px 50px rgba(20,25,43,.2);}
+  .form-tabs{display:flex;gap:8px;margin-bottom:22px;}
+  .form-tab{
+    flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);
+    padding:11px 14px;border-radius:12px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.82rem;
+    cursor:pointer;transition:background .2s ease,border-color .2s ease,color .2s ease;text-align:center;
+  }
+  .form-tab.active{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+  .form-panel{display:none;}
+  .form-panel.active{display:block;}
+  .form-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:6px;color:var(--gold-light);}
+  .form-card p.note{color:rgba(255,255,255,.6);font-size:.82rem;margin-bottom:24px;line-height:1.6;}
+  .more-contacts{margin-top:26px;padding-top:22px;border-top:1px solid rgba(20,25,43,.12);}
+  .more-contacts .mc-title{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8a7f68;margin-bottom:10px;}
+  .more-contacts ul{display:flex;flex-direction:column;gap:6px;}
+  .more-contacts li{font-size:.85rem;color:var(--text-soft);display:flex;gap:6px;flex-wrap:wrap;}
+  .more-contacts a{color:var(--ink);font-weight:600;}
+  .more-contacts a:hover{color:var(--gold);}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+  .form-card label{display:block;font-size:.78rem;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,.75);}
+  .form-card input, .form-card textarea{
+    width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);
+    border-radius:10px;padding:11px 14px;color:#fff;font-family:'Poppins',sans-serif;font-size:.9rem;
+  }
+  .form-card input::placeholder, .form-card textarea::placeholder{color:rgba(255,255,255,.35);}
+  .form-card textarea{resize:vertical;min-height:90px;margin-bottom:18px;}
+  .form-card .full{margin-bottom:14px;}
+  .map-box{border-radius:18px;overflow:hidden;min-height:280px;background:var(--cream-2);position:relative;margin-top:8px;}
+  .map-box iframe{width:100%;height:100%;min-height:280px;display:block;border:0;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:50px;} .form-row{grid-template-columns:1fr;}}
+
+  footer{background:var(--ink);border-top:1px solid rgba(201,162,39,.15);padding:30px 0;}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;}
+  footer .f-brand{display:flex;align-items:center;gap:12px;}
+  footer .f-brand .badge{background:var(--cream);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;padding:5px;flex:none;}
+  footer .f-brand .badge img{width:100%;height:100%;object-fit:contain;}
+  footer .f-brand span{color:rgba(255,255,255,.5);font-size:.8rem;}
+  footer a.book{color:var(--gold-light);font-weight:600;font-size:.85rem;}
+  footer a.book:hover{color:#fff;}
+  .legal-links{display:flex;gap:18px;flex-wrap:wrap;}
+  .legal-links button{
+    background:none;border:none;cursor:pointer;font-family:'Poppins',sans-serif;
+    color:rgba(255,255,255,.45);font-size:.78rem;transition:color .2s ease;padding:0;
+  }
+  .legal-links button:hover{color:var(--gold-light);}
+
+  /* ---------- LEGAL MODAL ---------- */
+  .legal-modal{
+    position:fixed;inset:0;background:rgba(12,16,32,.75);
+    display:flex;align-items:center;justify-content:center;padding:24px;
+    z-index:300;opacity:0;pointer-events:none;transition:opacity .25s ease;
+  }
+  .legal-modal.open{opacity:1;pointer-events:auto;}
+  .legal-box{
+    background:var(--paper);border-radius:20px;max-width:760px;width:100%;max-height:85vh;
+    overflow:hidden;display:flex;flex-direction:column;box-shadow:0 30px 70px rgba(0,0,0,.4);
+  }
+  .legal-head{display:flex;align-items:center;justify-content:space-between;padding:22px 26px;border-bottom:1px solid rgba(20,25,43,.1);}
+  .legal-head h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--ink);}
+  .legal-close{background:none;border:none;cursor:pointer;font-size:1.6rem;line-height:1;color:var(--text-soft);}
+  .legal-tabs{display:flex;gap:8px;padding:16px 26px 0;flex-wrap:wrap;}
+  .legal-tab{
+    background:var(--cream);border:1px solid rgba(20,25,43,.1);color:var(--ink);
+    padding:8px 16px;border-radius:20px;font-family:'Poppins',sans-serif;font-weight:600;font-size:.8rem;
+    cursor:pointer;transition:background .2s ease,color .2s ease;
+  }
+  .legal-tab.active{background:var(--ink);color:var(--gold-light);border-color:var(--ink);}
+  .legal-body{padding:20px 26px 30px;overflow-y:auto;}
+  .legal-panel{display:none;}
+  .legal-panel.active{display:block;}
+  .legal-panel h4{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--ink);margin:20px 0 8px;}
+  .legal-panel h4:first-child{margin-top:0;}
+  .legal-panel p{color:var(--text-soft);font-size:.9rem;line-height:1.75;margin-bottom:10px;}
+  .legal-panel ul{margin:0 0 12px 0;padding-left:0;}
+  .legal-panel li{color:var(--text-soft);font-size:.9rem;line-height:1.7;margin-bottom:8px;list-style:none;padding-left:16px;position:relative;}
+  .legal-panel li::before{content:'—';position:absolute;left:0;color:var(--gold);}
+  .legal-panel a{color:var(--gold);font-weight:600;}
+
+  /* ---------- COOKIE BANNER ---------- */
+  .cookie-banner{
+    position:fixed;left:16px;right:16px;bottom:16px;max-width:640px;margin:0 auto;
+    background:var(--ink);color:#fff;border-radius:18px;padding:22px 26px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);border:1px solid rgba(201,162,39,.3);
+    z-index:250;transform:translateY(140%);transition:transform .4s ease;
+  }
+  .cookie-banner.show{transform:translateY(0);}
+  .cookie-banner p{font-size:.85rem;line-height:1.6;color:rgba(255,255,255,.8);margin-bottom:16px;}
+  .cookie-banner a{color:var(--gold-light);font-weight:600;}
+  .cookie-actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .cookie-actions button{
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:.82rem;border-radius:30px;padding:10px 18px;cursor:pointer;border:none;
+  }
+  .cookie-accept{background:var(--gold);color:var(--ink);}
+  .cookie-accept:hover{background:var(--gold-light);}
+  .cookie-customize{background:transparent;border:1px solid rgba(255,255,255,.3)!important;color:#fff;}
+  .cookie-customize:hover{border-color:var(--gold)!important;}
+  .cookie-reject{background:transparent;color:rgba(255,255,255,.6);}
+  .cookie-reject:hover{color:#fff;}
+
+  /* ---------- LANGUAGE SWITCHER ---------- */
+  .lang-switch{position:relative;}
+  .lang-btn{
+    display:flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.3);
+    color:#fff;padding:8px 14px;border-radius:30px;
+    font-weight:600;font-size:.8rem;cursor:pointer;
+    transition:background .35s ease,border-color .35s ease,color .35s ease;
+  }
+  header.scrolled .lang-btn{background:rgba(20,25,43,.06);border-color:rgba(20,25,43,.2);color:var(--ink);}
+  .lang-menu{
+    position:absolute;top:calc(100% + 10px);right:0;
+    background:#fff;border-radius:14px;overflow:hidden;
+    box-shadow:0 16px 40px rgba(0,0,0,.18);min-width:150px;
+    opacity:0;visibility:hidden;transform:translateY(-6px);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease;z-index:120;
+  }
+  .lang-switch.open .lang-menu{opacity:1;visibility:visible;transform:translateY(0);}
+  .lang-menu button{
+    display:flex;align-items:center;gap:10px;width:100%;padding:11px 16px;background:none;border:none;cursor:pointer;
+    font-family:'Poppins',sans-serif;font-weight:600;font-size:.85rem;color:var(--ink);text-align:left;transition:background .15s ease;
+  }
+  .lang-menu button:hover{background:var(--cream);}
+  .lang-menu button.active{color:var(--gold);}
+  .flag{font-size:1rem;line-height:1;}
+
+  /* ---------- BACK TO TOP ---------- */
+  .to-top{
+    position:fixed;right:24px;bottom:24px;width:48px;height:48px;border-radius:50%;
+    background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;
+    border:none;cursor:pointer;box-shadow:0 10px 24px rgba(201,162,39,.4);
+    opacity:0;visibility:hidden;transform:translateY(12px);
+    transition:opacity .3s ease, transform .3s ease, background .2s ease;z-index:90;
+  }
+  .to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+  .to-top:hover{background:var(--gold-light);}
+  .to-top svg{width:20px;height:20px;}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="#inicio" class="brand">
+        <span class="badge"><img src="img/logo-hero.png" alt="El Capricho de Costa del Silencio"></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="#seleccion" data-i18n="nav_selection">Selección</a></li>
+        <li><a href="#carta" data-i18n="nav_carta">Carta</a></li>
+        <li><a href="#galeria" data-i18n="nav_gallery">Galería</a></li>
+        <li><a href="#contacto" data-i18n="nav_contact">Contacto</a></li>
+        <li><a href="#contacto" class="btn" data-i18n="nav_book">Reserva tu cata</a></li>
+      </ul>
+
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn" id="langBtn"><span class="flag" id="langFlag">🇪🇸</span><span id="langCode">ES</span></button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú">☰</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <span class="hero-tag" data-i18n="hero_tag">🍷 Gourmet · Catas · Tienda</span>
+    <h1><span data-i18n="hero_title1">El jamón no lleva prisa</span><span class="script" data-i18n="hero_title2">El sabor de lo auténtico</span></h1>
+    <p data-i18n="hero_p">Jamón ibérico de curación real, quesos, conservas y vinos escogidos con calma — en un espacio pensado para catar despacio, no para tener prisa.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn" data-i18n="nav_book">Reserva tu cata</a>
+      <a href="#seleccion" class="btn outline" data-i18n="hero_btn2">Ver selección</a>
+    </div>
+    <div class="hero-badges">
+      <span data-i18n="badge_pet">🐾 Pet friendly</span>
+      <span data-i18n="badge_wifi">📶 Wifi gratuito</span>
+      <span data-i18n="badge_aforo">🪑 Aforo reducido</span>
+    </div>
+  </div>
+  <div class="scroll-cue"><span></span><span data-i18n="hero_scroll">Scroll</span></div>
+</section>
+
+<!-- ================= SOBRE NOSOTROS ================= -->
+<section class="intro" id="nosotros">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="intro-media">
+        <img src="img/staff-cutting-1.jpg" alt="Corte de jamón ibérico en El Capricho de Costa del Silencio">
+        <div class="float-card">
+          <strong>36</strong>
+          <span data-i18n="intro_months">meses de curación real</span>
+        </div>
+      </div>
+      <div class="intro-text">
+        <span class="eyebrow" data-i18n="intro_eyebrow">No somos un restaurante</span>
+        <h2 class="section-title"><span data-i18n="intro_title1">Una tienda</span><span class="accent" data-i18n="intro_title2">para paladares curiosos</span></h2>
+        <p data-i18n="intro_p1">El Capricho de Costa del Silencio es una tienda gourmet con catas y degustaciones: jamón ibérico, quesos del mundo, conservas y vinos escogidos con calma y criterio.</p>
+        <p data-i18n="intro_p2">Aforo reducido y reservas necesarias, para que cada mesa tenga el tiempo y la atención que merece.</p>
+        <ul class="intro-points">
+          <li><span class="dot"></span><span data-i18n="intro_point1">Catas y degustaciones guiadas</span></li>
+          <li><span class="dot"></span><span data-i18n="intro_point2">Selección curada de producto ibérico</span></li>
+          <li><span class="dot"></span><span data-i18n="intro_point3">Pet friendly y wifi gratuito</span></li>
+          <li><span class="dot"></span><span data-i18n="intro_point4">Reserva en unos minutos</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SELECCIÓN ================= -->
+<section class="seleccion" id="seleccion">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="sel_eyebrow">Nuestra selección</span>
+    <h2 class="section-title"><span data-i18n="sel_title1">Para catar</span><span class="accent" data-i18n="sel_title2">y para llevar</span></h2>
+    <div class="sel-grid">
+      <div class="sel-card">
+        <div class="thumb"><img src="img/jamon-closeup.jpg" alt="Jamón ibérico"></div>
+        <div class="body">
+          <h3 data-i18n="sel1_title">Jamón Ibérico</h3>
+          <p data-i18n="sel1_p">36 meses de curación, 50% raza ibérica. Cortado al momento, por piezas o en tabla para compartir.</p>
+        </div>
+      </div>
+      <div class="sel-card">
+        <div class="thumb"><img src="img/almogrote.jpg" alt="Quesos del mundo y almogrote"></div>
+        <div class="body">
+          <h3 data-i18n="sel2_title">Quesos del Mundo</h3>
+          <p data-i18n="sel2_p">De cremosos a intensos — una selección pensada para todos los paladares, con producto canario incluido.</p>
+        </div>
+      </div>
+      <div class="sel-card">
+        <div class="thumb"><img src="img/conservas.jpg" alt="Conservas gallegas"></div>
+        <div class="body">
+          <h3 data-i18n="sel3_title">Conservas Gallegas</h3>
+          <p data-i18n="sel3_p">Berberechos, zamburiñas y navajas — el mar, directo de las Rías Baixas.</p>
+        </div>
+      </div>
+      <div class="sel-card">
+        <div class="thumb"><img src="img/wine-oil-1.jpg" alt="Vinos y aceites"></div>
+        <div class="body">
+          <h3 data-i18n="sel4_title">Vino y Aceite</h3>
+          <p data-i18n="sel4_p">Ribera, Rioja y vinos canarios, junto a aceites de sierra para maridar sin prisa.</p>
+        </div>
+      </div>
+      <div class="sel-card">
+        <div class="thumb"><img src="img/olives.jpg" alt="Vermú y aperitivo"></div>
+        <div class="body">
+          <h3 data-i18n="sel5_title">Vermú y Aperitivo</h3>
+          <p data-i18n="sel5_p">El clásico español de toda la vida, bien hecho, con unas aceitunas y buena compañía.</p>
+        </div>
+      </div>
+      <div class="sel-card">
+        <div class="thumb"><img src="img/chocolates.jpg" alt="Chocolates y regalos gourmet"></div>
+        <div class="body">
+          <h3 data-i18n="sel6_title">Chocolates y Regalos</h3>
+          <p data-i18n="sel6_p">Chocolate belga, dulces canarios y detalles gourmet — el regalo que sí dice algo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CARTA ================= -->
+<section class="carta" id="carta">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="carta_eyebrow">Nuestra carta</span>
+    <h2 class="section-title"><span data-i18n="carta_title1">Precios reales</span><span class="accent" data-i18n="carta_title2">al minuto</span></h2>
+    <p class="carta-sub" data-i18n="carta_sub">Sincronizada directamente con nuestro punto de venta: siempre al día.</p>
+    <div class="menu-tabs" id="cartaTabs"><div class="menu-loading" data-i18n="carta_loading">Cargando la carta…</div></div>
+    <div class="menu-panel" id="cartaPanel"></div>
+    <div class="menu-foot">
+      <a href="https://menu.elcaprichodecostadelsilencio.com" target="_blank" rel="noopener" data-i18n="carta_full_link">Ver la carta completa online →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALERÍA ================= -->
+<section class="gallery" id="galeria">
+  <div class="wrap">
+    <div class="gallery-head">
+      <div>
+        <span class="eyebrow" data-i18n="gallery_eyebrow">Un vistazo</span>
+        <h2 class="section-title" style="margin-bottom:0;"><span data-i18n="gallery_title1">La tienda</span><span class="accent" data-i18n="gallery_title2">en imágenes</span></h2>
+      </div>
+      <a href="#contacto" class="btn" data-i18n="nav_book">Reserva tu cata</a>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <a href="img/menu-boards.jpg" class="g1"><img src="img/menu-boards.jpg" alt="Cartas de El Capricho de Costa del Silencio"></a>
+      <a href="img/staff-cutting-2.jpg"><img src="img/staff-cutting-2.jpg" alt="Cortando jamón ibérico"></a>
+      <a href="img/jamon-slice.jpg"><img src="img/jamon-slice.jpg" alt="Loncha de jamón ibérico"></a>
+      <a href="img/dog.jpg" class="g5"><img src="img/dog.jpg" alt="Tienda pet friendly"></a>
+      <a href="img/mojo-jars.jpg"><img src="img/mojo-jars.jpg" alt="Mojos y conservas canarias"></a>
+      <a href="img/drinks-fridge.jpg"><img src="img/drinks-fridge.jpg" alt="Selección de bebidas"></a>
+      <a href="img/salchichon-pack.jpg"><img src="img/salchichon-pack.jpg" alt="Salchichón ibérico de bellota"></a>
+      <a href="img/coaster.jpg"><img src="img/coaster.jpg" alt="Detalle de marca El Capricho"></a>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+<!-- ================= CONTACTO / RESERVAS ================= -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-head">
+      <span class="eyebrow" data-i18n="contact_eyebrow">Reserva tu cata</span>
+      <h2 class="section-title"><span data-i18n="contact_title1">Te esperamos</span><span class="accent" data-i18n="contact_title2">cuando quieras</span></h2>
+      <p style="color:var(--text-soft);" data-i18n="contact_p">Aforo reducido, así que mejor avisar antes. Llama, escribe por WhatsApp o rellena el formulario.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <div class="quick-actions">
+          <a href="tel:+34623972847" class="btn" data-i18n="cta_call">📞 Llamar ahora</a>
+          <a href="https://wa.me/34623972847" target="_blank" rel="noopener" class="btn outline" data-i18n="cta_whatsapp">💬 Escribir por WhatsApp</a>
+        </div>
+        <ul class="info-list">
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div>
+              <strong data-i18n="info_address_label">Dirección</strong>
+              <span>C.C. Chaparral, Av. José Antonio Tavío, 38630 Costa del Silencio, Santa Cruz de Tenerife</span><br>
+              <a class="go" href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xc6aa309cea488b3:0xa9756eabadb74d70?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener" data-i18n="info_directions">Cómo llegar →</a>
+            </div>
+          </li>
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></div>
+            <div><strong data-i18n="info_phone_label">Teléfono</strong><a href="tel:+34623972847">623 97 28 47</a></div>
+          </li>
+          <li>
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+            <div>
+              <strong data-i18n="info_hours_label">Horario</strong>
+              <div class="hours-grid">
+                <span data-i18n="day_wed">Miércoles</span><span>17:00–21:30</span>
+                <span data-i18n="day_thu">Jueves</span><span>17:00–21:30</span>
+                <span data-i18n="day_fri">Viernes</span><span>17:00–22:30</span>
+                <span data-i18n="day_sat">Sábado</span><span>17:00–22:30</span>
+                <span data-i18n="day_sun">Domingo</span><span class="closed" data-i18n="closed">Cerrado</span>
+                <span data-i18n="day_mon">Lunes</span><span class="closed" data-i18n="closed">Cerrado</span>
+                <span data-i18n="day_tue">Martes</span><span class="closed" data-i18n="closed">Cerrado</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/elcaprichodecostadelsilencio/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+          <a href="https://www.facebook.com/elcaprichocostadelsilencio/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a>
+        </div>
+
+        <div class="map-box">
+          <iframe title="Ubicación El Capricho de Costa del Silencio" src="https://www.google.com/maps?q=C.C+Chaparral,+Av.+Jose+Antonio+Tavio,+38630+Costa+del+Silencio,+Santa+Cruz+de+Tenerife&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+
+        <div class="more-contacts">
+          <div class="mc-title" data-i18n="mc_title">Otros contactos</div>
+          <ul>
+            <li><span data-i18n="mc_service">Atención al cliente:</span> <a id="mcService" href="mailto:atencionalcliente@elcaprichodecostadelsilencio.com">atencionalcliente@elcaprichodecostadelsilencio.com</a></li>
+            <li><span data-i18n="mc_business">Empresas y proveedores:</span> <a href="mailto:direccion@elcaprichodecostadelsilencio.com">direccion@elcaprichodecostadelsilencio.com</a></li>
+            <li><span data-i18n="mc_privacy">Protección de datos:</span> <a href="mailto:protecciondedatos@elcaprichodecostadelsilencio.com">protecciondedatos@elcaprichodecostadelsilencio.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="form-tabs">
+          <button class="form-tab active" id="tabReserve" data-i18n="tab_reserve">Reservar cata</button>
+          <button class="form-tab" id="tabOrder" data-i18n="tab_order">Pedido de tienda</button>
+        </div>
+
+        <div class="form-panel active" id="panelReserve">
+          <h3 data-i18n="form_title">Pide tu reserva</h3>
+          <p class="note" data-i18n="form_note">Este formulario abre tu app de correo con los datos ya escritos. Si prefieres respuesta inmediata, mejor llama o escribe por WhatsApp.</p>
+          <form id="reserveForm">
+            <div class="form-row">
+              <div>
+                <label data-i18n="form_name">Nombre</label>
+                <input type="text" id="r_name" required>
+              </div>
+              <div>
+                <label data-i18n="form_people">Personas</label>
+                <input type="number" id="r_people" min="1" max="20" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div>
+                <label data-i18n="form_date">Fecha</label>
+                <input type="date" id="r_date" required>
+              </div>
+              <div>
+                <label data-i18n="form_time">Hora</label>
+                <input type="time" id="r_time" required>
+              </div>
+            </div>
+            <div class="full">
+              <label data-i18n="form_message">Mensaje (opcional)</label>
+              <textarea id="r_message" data-i18n-placeholder="form_message_ph" placeholder="Alguna preferencia o alergia que debamos saber"></textarea>
+            </div>
+            <button type="submit" class="btn" style="width:100%;" data-i18n="form_submit">Enviar solicitud</button>
+          </form>
+        </div>
+
+        <div class="form-panel" id="panelOrder">
+          <h3 data-i18n="order_title">Haz tu pedido</h3>
+          <p class="note" data-i18n="order_note">Este formulario abre tu app de correo con el pedido ya escrito. Te confirmamos disponibilidad y forma de entrega por email o teléfono.</p>
+          <form id="orderForm">
+            <div class="form-row">
+              <div>
+                <label data-i18n="form_name">Nombre</label>
+                <input type="text" id="o_name" required>
+              </div>
+              <div>
+                <label data-i18n="order_contact">Email o teléfono</label>
+                <input type="text" id="o_contact" required>
+              </div>
+            </div>
+            <div class="full">
+              <label data-i18n="order_products">¿Qué te gustaría pedir?</label>
+              <textarea id="o_products" data-i18n-placeholder="order_products_ph" placeholder="Ej: jamón ibérico 1 kg, una tabla de quesos, dos botellas de vino..." required></textarea>
+            </div>
+            <div class="full">
+              <label data-i18n="form_message">Mensaje (opcional)</label>
+              <textarea id="o_message" data-i18n-placeholder="order_message_ph" placeholder="Fecha de recogida, envío, alergias..."></textarea>
+            </div>
+            <button type="submit" class="btn" style="width:100%;" data-i18n="order_submit">Enviar pedido</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">
+      <span class="badge"><img src="img/logo-hero.png" alt="El Capricho de Costa del Silencio"></span>
+      <span>© <span id="year"></span> El Capricho de Costa del Silencio</span>
+    </div>
+    <div class="legal-links">
+      <button type="button" data-legal-tab="aviso" data-i18n="footer_legal">Aviso legal</button>
+      <button type="button" data-legal-tab="privacidad" data-i18n="footer_privacy">Política de privacidad</button>
+      <button type="button" data-legal-tab="cookies" data-i18n="footer_cookies">Política de cookies</button>
+    </div>
+    <a href="#contacto" class="book" data-i18n="nav_book">Reserva tu cata</a>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- ================= LEGAL MODAL ================= -->
+<div class="legal-modal" id="legalModal">
+  <div class="legal-box">
+    <div class="legal-head">
+      <h3 id="legalModalTitle" data-i18n="legal_modal_title">Información legal</h3>
+      <button class="legal-close" id="legalClose" aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="legal-tabs">
+      <button class="legal-tab active" data-legal-panel="aviso" data-i18n="footer_legal">Aviso legal</button>
+      <button class="legal-tab" data-legal-panel="privacidad" data-i18n="footer_privacy">Política de privacidad</button>
+      <button class="legal-tab" data-legal-panel="cookies" data-i18n="footer_cookies">Política de cookies</button>
+    </div>
+    <div class="legal-body">
+
+      <div class="legal-panel active" id="legalPanelAviso">
+        <p data-i18n="aviso_p1">En cumplimiento del deber de información del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), se informa de que el titular de este sitio web es Jonathan Álvarez Abreu, NIF 54047787H, con domicilio en Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife.</p>
+        <p data-i18n="aviso_p2">El Capricho de Costa del Silencio no asume responsabilidad derivada de la falta de veracidad, integridad, actualización o precisión de los datos e informaciones contenidos en estas páginas.</p>
+        <p data-i18n="aviso_p3">Los textos, imágenes, logotipo y demás contenidos de este sitio son propiedad de El Capricho de Costa del Silencio o de sus licenciantes. Queda prohibida su reproducción, distribución o comunicación pública sin consentimiento expreso.</p>
+        <p data-i18n="aviso_p4">Para acceder a algunos servicios (reserva de catas, pedidos de tienda) deberás facilitar datos personales, tratados conforme al Reglamento (UE) 2016/679 (RGPD). Puedes ejercer tus derechos escribiendo a <a href="mailto:protecciondedatos@elcaprichodecostadelsilencio.com">protecciondedatos@elcaprichodecostadelsilencio.com</a> o en la dirección indicada arriba.</p>
+      </div>
+
+      <div class="legal-panel" id="legalPanelPrivacidad">
+        <h4 data-i18n="priv_h1">Protección de datos según el RGPD</h4>
+        <p data-i18n="priv_p1">Los datos personales que recogemos a través de los formularios de este sitio web (reserva de cata y pedidos de tienda) se incorporan a los ficheros de Jonathan Álvarez Abreu, responsable de El Capricho de Costa del Silencio.</p>
+        <h4 data-i18n="priv_h2">¿Con qué finalidad tratamos tus datos?</h4>
+        <ul>
+          <li data-i18n="priv_l1">Gestionar tu reserva de cata o degustación.</li>
+          <li data-i18n="priv_l2">Gestionar tu pedido de productos de la tienda.</li>
+          <li data-i18n="priv_l3">Responder a tus consultas de atención al cliente.</li>
+          <li data-i18n="priv_l4">Enviarte información comercial, solo si nos has dado tu consentimiento expreso.</li>
+        </ul>
+        <h4 data-i18n="priv_h3">¿Por cuánto tiempo los conservamos?</h4>
+        <p data-i18n="priv_p2">Mientras exista una relación comercial contigo o hasta que solicites su supresión, y durante el plazo en que pudieran derivarse responsabilidades legales.</p>
+        <h4 data-i18n="priv_h4">Legitimación y destinatarios</h4>
+        <p data-i18n="priv_p3">El tratamiento se basa en tu solicitud de información o reserva, y en tu consentimiento expreso cuando corresponda. Tus datos no se ceden a terceros ajenos a El Capricho de Costa del Silencio, salvo obligación legal.</p>
+        <h4 data-i18n="priv_h5">Tus derechos</h4>
+        <p data-i18n="priv_p4">Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación, oposición, limitación y portabilidad escribiendo a <a href="mailto:protecciondedatos@elcaprichodecostadelsilencio.com">protecciondedatos@elcaprichodecostadelsilencio.com</a> o en Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife. También puedes oponerte al envío de comunicaciones comerciales en cualquier momento, por el mismo medio.</p>
+        <h4 data-i18n="priv_h6">Propiedad intelectual</h4>
+        <p data-i18n="priv_p5">Todos los contenidos de este sitio (textos, imágenes, logotipo) son propiedad de El Capricho de Costa del Silencio o de sus licenciantes y están protegidos por la normativa de propiedad intelectual. Queda prohibido su uso no autorizado.</p>
+      </div>
+
+      <div class="legal-panel" id="legalPanelCookies">
+        <h4 data-i18n="cook_h1">¿Qué son las cookies?</h4>
+        <p data-i18n="cook_p1">Las cookies son archivos que se descargan en tu equipo al visitar una página web y permiten almacenar y recuperar información sobre tus hábitos de navegación.</p>
+        <h4 data-i18n="cook_h2">Cookies que utilizamos</h4>
+        <p data-i18n="cook_p2">Este sitio usa cookies técnicas necesarias para su funcionamiento (por ejemplo, para recordar tu idioma preferido) y puede cargar contenido de terceros, como el mapa de Google Maps incrustado, que puede instalar sus propias cookies conforme a la política de privacidad de Google.</p>
+        <h4 data-i18n="cook_h3">Tipos de cookies</h4>
+        <ul>
+          <li data-i18n="cook_l1">Cookies propias: gestionadas directamente por El Capricho de Costa del Silencio (p. ej., para recordar tu idioma).</li>
+          <li data-i18n="cook_l2">Cookies de terceros: instaladas por servicios externos incrustados en la web (p. ej., Google Maps).</li>
+          <li data-i18n="cook_l3">Cookies técnicas: necesarias para la navegación y el funcionamiento básico del sitio.</li>
+          <li data-i18n="cook_l4">Cookies de personalización: recuerdan tus preferencias, como el idioma.</li>
+        </ul>
+        <h4 data-i18n="cook_h4">Cómo gestionar las cookies</h4>
+        <p data-i18n="cook_p3">Puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador (Chrome, Firefox, Safari, Edge, Opera). Bloquear algunas cookies puede afectar al funcionamiento del sitio.</p>
+        <h4 data-i18n="cook_h5">Consentimiento</h4>
+        <p data-i18n="cook_p4">Al continuar navegando por El Capricho de Costa del Silencio, aceptas el uso de estas cookies según lo descrito en esta política. Puedes cambiar tu decisión en cualquier momento eliminando las cookies desde tu navegador.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= COOKIE BANNER ================= -->
+<div class="cookie-banner" id="cookieBanner">
+  <p data-i18n="cookie_text">Usamos cookies propias y de terceros para mejorar tu experiencia y analizar la navegación. Puedes aceptar, rechazar o personalizar su uso. Más información en nuestra <a href="#" id="cookiePolicyLink" data-i18n="footer_cookies">Política de cookies</a>.</p>
+  <div class="cookie-actions">
+    <button class="cookie-accept" id="cookieAccept" data-i18n="cookie_accept">Aceptar</button>
+    <button class="cookie-customize" id="cookieCustomize" data-i18n="cookie_customize">Personalizar</button>
+    <button class="cookie-reject" id="cookieReject" data-i18n="cookie_reject">Rechazar</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const header = document.getElementById('site-header');
+  const toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+    toTop.classList.toggle('show', window.scrollY > 500);
+  });
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  const burger = document.getElementById('burgerBtn');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.getElementById('galleryGrid').addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    e.preventDefault();
+    lightboxImg.src = link.getAttribute('href');
+    lightboxImg.alt = link.querySelector('img').alt;
+    lightbox.classList.add('open');
+  });
+  document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+
+  /* ================= LEGAL MODAL ================= */
+  const legalModal = document.getElementById('legalModal');
+  const legalTabs = document.querySelectorAll('.legal-tab');
+  const legalPanels = {
+    aviso: document.getElementById('legalPanelAviso'),
+    privacidad: document.getElementById('legalPanelPrivacidad'),
+    cookies: document.getElementById('legalPanelCookies'),
+  };
+  function openLegal(tab){
+    legalModal.classList.add('open');
+    legalTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-legal-panel') === tab));
+    Object.entries(legalPanels).forEach(([key, el]) => el.classList.toggle('active', key === tab));
+  }
+  document.querySelectorAll('[data-legal-tab]').forEach(btn => {
+    btn.addEventListener('click', () => openLegal(btn.getAttribute('data-legal-tab')));
+  });
+  legalTabs.forEach(btn => {
+    btn.addEventListener('click', () => openLegal(btn.getAttribute('data-legal-panel')));
+  });
+  document.getElementById('legalClose').addEventListener('click', () => legalModal.classList.remove('open'));
+  legalModal.addEventListener('click', (e) => { if (e.target === legalModal) legalModal.classList.remove('open'); });
+
+  /* ================= COOKIE BANNER ================= */
+  const cookieBanner = document.getElementById('cookieBanner');
+  const cookieChoice = localStorage.getItem('capricho_cookie_consent');
+  if (!cookieChoice) {
+    setTimeout(() => cookieBanner.classList.add('show'), 600);
+  }
+  function dismissCookieBanner(choice){
+    localStorage.setItem('capricho_cookie_consent', choice);
+    cookieBanner.classList.remove('show');
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => dismissCookieBanner('accepted'));
+  document.getElementById('cookieReject').addEventListener('click', () => dismissCookieBanner('rejected'));
+  document.getElementById('cookieCustomize').addEventListener('click', () => { openLegal('cookies'); });
+  document.getElementById('cookiePolicyLink').addEventListener('click', (e) => { e.preventDefault(); openLegal('cookies'); });
+
+  /* ================= I18N ================= */
+  const FLAGS = {es:'🇪🇸', en:'🇬🇧'};
+  const I18N = {"es": {"nav_home": "Inicio", "nav_about": "Nosotros", "nav_selection": "Selección", "nav_gallery": "Galería", "nav_contact": "Contacto", "nav_book": "Reserva tu cata", "hero_tag": "🍷 Gourmet · Catas · Tienda", "hero_title1": "El jamón no lleva prisa", "hero_title2": "El sabor de lo auténtico", "hero_p": "Jamón ibérico de curación real, quesos, conservas y vinos escogidos con calma — en un espacio pensado para catar despacio, no para tener prisa.", "hero_btn2": "Ver selección", "hero_scroll": "Scroll", "badge_pet": "🐾 Pet friendly", "badge_wifi": "📶 Wifi gratuito", "badge_aforo": "🪑 Aforo reducido", "intro_eyebrow": "No somos un restaurante", "intro_title1": "Una tienda", "intro_title2": "para paladares curiosos", "intro_p1": "El Capricho de Costa del Silencio es una tienda gourmet con catas y degustaciones: jamón ibérico, quesos del mundo, conservas y vinos escogidos con calma y criterio.", "intro_p2": "Aforo reducido y reservas necesarias, para que cada mesa tenga el tiempo y la atención que merece.", "intro_point1": "Catas y degustaciones guiadas", "intro_point2": "Selección curada de producto ibérico", "intro_point3": "Pet friendly y wifi gratuito", "intro_point4": "Reserva en unos minutos", "intro_months": "meses de curación real", "sel_eyebrow": "Nuestra selección", "sel_title1": "Para catar", "sel_title2": "y para llevar", "sel1_title": "Jamón Ibérico", "sel1_p": "36 meses de curación, 50% raza ibérica. Cortado al momento, por piezas o en tabla para compartir.", "sel2_title": "Quesos del Mundo", "sel2_p": "De cremosos a intensos — una selección pensada para todos los paladares, con producto canario incluido.", "sel3_title": "Conservas Gallegas", "sel3_p": "Berberechos, zamburiñas y navajas — el mar, directo de las Rías Baixas.", "sel4_title": "Vino y Aceite", "sel4_p": "Ribera, Rioja y vinos canarios, junto a aceites de sierra para maridar sin prisa.", "sel5_title": "Vermú y Aperitivo", "sel5_p": "El clásico español de toda la vida, bien hecho, con unas aceitunas y buena compañía.", "sel6_title": "Chocolates y Regalos", "sel6_p": "Chocolate belga, dulces canarios y detalles gourmet — el regalo que sí dice algo.", "gallery_eyebrow": "Un vistazo", "gallery_title1": "La tienda", "gallery_title2": "en imágenes", "contact_eyebrow": "Reserva tu cata", "contact_title1": "Te esperamos", "contact_title2": "cuando quieras", "contact_p": "Aforo reducido, así que mejor avisar antes. Llama, escribe por WhatsApp o rellena el formulario.", "cta_call": "📞 Llamar ahora", "cta_whatsapp": "💬 Escribir por WhatsApp", "info_address_label": "Dirección", "info_directions": "Cómo llegar →", "info_phone_label": "Teléfono", "info_hours_label": "Horario", "day_mon": "Lunes", "day_tue": "Martes", "day_wed": "Miércoles", "day_thu": "Jueves", "day_fri": "Viernes", "day_sat": "Sábado", "day_sun": "Domingo", "closed": "Cerrado", "form_title": "Pide tu reserva", "form_note": "Este formulario abre tu app de correo con los datos ya escritos. Si prefieres respuesta inmediata, mejor llama o escribe por WhatsApp.", "form_name": "Nombre", "form_people": "Personas", "form_date": "Fecha", "form_time": "Hora", "form_message": "Mensaje (opcional)", "form_message_ph": "Alguna preferencia o alergia que debamos saber", "form_submit": "Enviar solicitud", "tab_reserve": "Reservar cata", "tab_order": "Pedido de tienda", "order_title": "Haz tu pedido", "order_note": "Este formulario abre tu app de correo con el pedido ya escrito. Te confirmamos disponibilidad y forma de entrega por email o teléfono.", "order_contact": "Email o teléfono", "order_products": "¿Qué te gustaría pedir?", "order_products_ph": "Ej: jamón ibérico 1 kg, una tabla de quesos, dos botellas de vino...", "order_message_ph": "Fecha de recogida, envío, alergias...", "order_submit": "Enviar pedido", "mc_title": "Otros contactos", "mc_service": "Atención al cliente:", "mc_business": "Empresas y proveedores:", "mc_privacy": "Protección de datos:", "footer_legal": "Aviso legal", "footer_privacy": "Política de privacidad", "footer_cookies": "Política de cookies", "legal_modal_title": "Información legal", "aviso_p1": "En cumplimiento del deber de información del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), se informa de que el titular de este sitio web es Jonathan Álvarez Abreu, NIF 54047787H, con domicilio en Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife.", "aviso_p2": "El Capricho de Costa del Silencio no asume responsabilidad derivada de la falta de veracidad, integridad, actualización o precisión de los datos e informaciones contenidos en estas páginas.", "aviso_p3": "Los textos, imágenes, logotipo y demás contenidos de este sitio son propiedad de El Capricho de Costa del Silencio o de sus licenciantes. Queda prohibida su reproducción, distribución o comunicación pública sin consentimiento expreso.", "aviso_p4": "Para acceder a algunos servicios (reserva de catas, pedidos de tienda) deberás facilitar datos personales, tratados conforme al Reglamento (UE) 2016/679 (RGPD). Puedes ejercer tus derechos escribiendo a protecciondedatos@elcaprichodecostadelsilencio.com o en la dirección indicada arriba.", "priv_h1": "Protección de datos según el RGPD", "priv_p1": "Los datos personales que recogemos a través de los formularios de este sitio web (reserva de cata y pedidos de tienda) se incorporan a los ficheros de Jonathan Álvarez Abreu, responsable de El Capricho de Costa del Silencio.", "priv_h2": "¿Con qué finalidad tratamos tus datos?", "priv_l1": "Gestionar tu reserva de cata o degustación.", "priv_l2": "Gestionar tu pedido de productos de la tienda.", "priv_l3": "Responder a tus consultas de atención al cliente.", "priv_l4": "Enviarte información comercial, solo si nos has dado tu consentimiento expreso.", "priv_h3": "¿Por cuánto tiempo los conservamos?", "priv_p2": "Mientras exista una relación comercial contigo o hasta que solicites su supresión, y durante el plazo en que pudieran derivarse responsabilidades legales.", "priv_h4": "Legitimación y destinatarios", "priv_p3": "El tratamiento se basa en tu solicitud de información o reserva, y en tu consentimiento expreso cuando corresponda. Tus datos no se ceden a terceros ajenos a El Capricho de Costa del Silencio, salvo obligación legal.", "priv_h5": "Tus derechos", "priv_p4": "Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación, oposición, limitación y portabilidad escribiendo a protecciondedatos@elcaprichodecostadelsilencio.com o en Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife. También puedes oponerte al envío de comunicaciones comerciales en cualquier momento, por el mismo medio.", "priv_h6": "Propiedad intelectual", "priv_p5": "Todos los contenidos de este sitio (textos, imágenes, logotipo) son propiedad de El Capricho de Costa del Silencio o de sus licenciantes y están protegidos por la normativa de propiedad intelectual. Queda prohibido su uso no autorizado.", "cook_h1": "¿Qué son las cookies?", "cook_p1": "Las cookies son archivos que se descargan en tu equipo al visitar una página web y permiten almacenar y recuperar información sobre tus hábitos de navegación.", "cook_h2": "Cookies que utilizamos", "cook_p2": "Este sitio usa cookies técnicas necesarias para su funcionamiento (por ejemplo, para recordar tu idioma preferido) y puede cargar contenido de terceros, como el mapa de Google Maps incrustado, que puede instalar sus propias cookies conforme a la política de privacidad de Google.", "cook_h3": "Tipos de cookies", "cook_l1": "Cookies propias: gestionadas directamente por El Capricho de Costa del Silencio (p. ej., para recordar tu idioma).", "cook_l2": "Cookies de terceros: instaladas por servicios externos incrustados en la web (p. ej., Google Maps).", "cook_l3": "Cookies técnicas: necesarias para la navegación y el funcionamiento básico del sitio.", "cook_l4": "Cookies de personalización: recuerdan tus preferencias, como el idioma.", "cook_h4": "Cómo gestionar las cookies", "cook_p3": "Puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador (Chrome, Firefox, Safari, Edge, Opera). Bloquear algunas cookies puede afectar al funcionamiento del sitio.", "cook_h5": "Consentimiento", "cook_p4": "Al continuar navegando por El Capricho de Costa del Silencio, aceptas el uso de estas cookies según lo descrito en esta política. Puedes cambiar tu decisión en cualquier momento eliminando las cookies desde tu navegador.", "cookie_text": "Usamos cookies propias y de terceros para mejorar tu experiencia y analizar la navegación. Puedes aceptar, rechazar o personalizar su uso. Más información en nuestra Política de cookies.", "cookie_accept": "Aceptar", "cookie_customize": "Personalizar", "cookie_reject": "Rechazar", "nav_carta": "Carta", "carta_eyebrow": "Nuestra carta", "carta_title1": "Precios reales", "carta_title2": "al minuto", "carta_sub": "Sincronizada directamente con nuestro punto de venta: siempre al día.", "carta_loading": "Cargando la carta…", "carta_full_link": "Ver la carta completa online →", "carta_error": "No se pudo cargar la carta en este momento. Consúltala directamente aquí."}, "en": {"nav_home": "Home", "nav_about": "About", "nav_selection": "Selection", "nav_gallery": "Gallery", "nav_contact": "Contact", "nav_book": "Book your tasting", "hero_tag": "🍷 Gourmet · Tastings · Shop", "hero_title1": "Ham like this doesn't rush", "hero_title2": "The taste of the authentic", "hero_p": "Real Ibérico curing, cheeses, preserves and carefully chosen wines — a place made for tasting slowly, not rushing through.", "hero_btn2": "View selection", "hero_scroll": "Scroll", "badge_pet": "🐾 Pet friendly", "badge_wifi": "📶 Free wifi", "badge_aforo": "🪑 Limited seating", "intro_eyebrow": "We're not a restaurant", "intro_title1": "A shop", "intro_title2": "for curious palates", "intro_p1": "El Capricho de Costa del Silencio is a gourmet shop with tastings: Ibérico ham, cheeses from around the world, preserves and wines chosen with care and criteria.", "intro_p2": "Limited seating and reservations required, so every table gets the time and attention it deserves.", "intro_point1": "Guided tastings", "intro_point2": "A curated selection of Ibérico product", "intro_point3": "Pet friendly and free wifi", "intro_point4": "Book in a couple of minutes", "intro_months": "months of real curing", "sel_eyebrow": "Our selection", "sel_title1": "To taste", "sel_title2": "and to take home", "sel1_title": "Ibérico Ham", "sel1_p": "36 months of curing, 50% Ibérico breed. Sliced fresh, by the piece or on a board to share.", "sel2_title": "Cheeses of the World", "sel2_p": "From creamy to bold — a selection for every palate, Canarian product included.", "sel3_title": "Galician Preserves", "sel3_p": "Cockles, scallops and razor clams — the sea, straight from the Rías Baixas.", "sel4_title": "Wine and Oil", "sel4_p": "Ribera, Rioja and Canarian wines, alongside olive oils from the sierra to pair without rushing.", "sel5_title": "Vermouth and Aperitivo", "sel5_p": "The classic Spanish aperitivo, done right, with a few olives and good company.", "sel6_title": "Chocolates and Gifts", "sel6_p": "Belgian chocolate, Canarian sweets and gourmet treats — the gift that actually says something.", "gallery_eyebrow": "A glimpse", "gallery_title1": "The shop", "gallery_title2": "in pictures", "contact_eyebrow": "Book your tasting", "contact_title1": "We're waiting", "contact_title2": "whenever you like", "contact_p": "Seating is limited, so it's best to let us know in advance. Call, message us on WhatsApp, or fill in the form.", "cta_call": "📞 Call now", "cta_whatsapp": "💬 Message on WhatsApp", "info_address_label": "Address", "info_directions": "Get directions →", "info_phone_label": "Phone", "info_hours_label": "Opening hours", "day_mon": "Monday", "day_tue": "Tuesday", "day_wed": "Wednesday", "day_thu": "Thursday", "day_fri": "Friday", "day_sat": "Saturday", "day_sun": "Sunday", "closed": "Closed", "form_title": "Request your reservation", "form_note": "This form opens your email app with the details already filled in. For an immediate reply, it's best to call or message on WhatsApp.", "form_name": "Name", "form_people": "Guests", "form_date": "Date", "form_time": "Time", "form_message": "Message (optional)", "form_message_ph": "Any preference or allergy we should know about", "form_submit": "Send request", "tab_reserve": "Book a tasting", "tab_order": "Shop order", "order_title": "Place your order", "order_note": "This form opens your email app with the order already written. We'll confirm availability and delivery by email or phone.", "order_contact": "Email or phone", "order_products": "What would you like to order?", "order_products_ph": "E.g. 1 kg Ibérico ham, one cheese board, two bottles of wine...", "order_message_ph": "Pickup date, shipping, allergies...", "order_submit": "Send order", "mc_title": "Other contacts", "mc_service": "Customer care:", "mc_business": "Business and suppliers:", "mc_privacy": "Data protection:", "footer_legal": "Legal notice", "footer_privacy": "Privacy policy", "footer_cookies": "Cookie policy", "legal_modal_title": "Legal information", "aviso_p1": "In compliance with the duty of information under Article 10 of Spanish Law 34/2002 on Information Society and E-commerce Services (LSSICE), this website is owned by Jonathan Álvarez Abreu, Tax ID (NIF) 54047787H, address at Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife, Spain.", "aviso_p2": "El Capricho de Costa del Silencio accepts no liability arising from a lack of accuracy, completeness, timeliness or precision of the data or information contained on these pages.", "aviso_p3": "The text, images, logo and other content on this site are the property of El Capricho de Costa del Silencio or its licensors. Reproduction, distribution or public communication without express consent is prohibited.", "aviso_p4": "To access certain services (tasting reservations, shop orders) you will need to provide personal data, processed in accordance with Regulation (EU) 2016/679 (GDPR). You can exercise your rights by writing to protecciondedatos@elcaprichodecostadelsilencio.com or at the address above.", "priv_h1": "Data protection under the GDPR", "priv_p1": "Personal data collected through this website's forms (tasting reservations and shop orders) is included in the files of Jonathan Álvarez Abreu, the party responsible for El Capricho de Costa del Silencio.", "priv_h2": "What do we use your data for?", "priv_l1": "Managing your tasting or degustation reservation.", "priv_l2": "Managing your shop order.", "priv_l3": "Responding to your customer service enquiries.", "priv_l4": "Sending you commercial information, only if you have given your express consent.", "priv_h3": "How long do we keep it?", "priv_p2": "For as long as our business relationship continues or until you request its deletion, and for the period during which legal liabilities could arise.", "priv_h4": "Legal basis and recipients", "priv_p3": "Processing is based on your request for information or booking, and on your express consent where applicable. Your data is not shared with third parties outside El Capricho de Costa del Silencio, except where legally required.", "priv_h5": "Your rights", "priv_p4": "You can exercise your rights of access, rectification, erasure, objection, restriction and portability at any time by writing to protecciondedatos@elcaprichodecostadelsilencio.com or at Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife, Spain. You can also object to receiving commercial communications at any time, through the same channel.", "priv_h6": "Intellectual property", "priv_p5": "All content on this site (text, images, logo) is the property of El Capricho de Costa del Silencio or its licensors and is protected under intellectual property law. Unauthorised use is prohibited.", "cook_h1": "What are cookies?", "cook_p1": "Cookies are files downloaded to your device when you visit a website, allowing information about your browsing habits to be stored and retrieved.", "cook_h2": "Cookies we use", "cook_p2": "This site uses technical cookies necessary for it to work (for example, to remember your preferred language) and may load third-party content, such as the embedded Google Maps, which may set its own cookies under Google's privacy policy.", "cook_h3": "Types of cookies", "cook_l1": "First-party cookies: managed directly by El Capricho de Costa del Silencio (e.g. to remember your language).", "cook_l2": "Third-party cookies: set by external services embedded on the site (e.g. Google Maps).", "cook_l3": "Technical cookies: necessary for browsing and the site's basic operation.", "cook_l4": "Personalisation cookies: remember your preferences, such as language.", "cook_h4": "Managing cookies", "cook_p3": "You can allow, block or delete cookies through your browser settings (Chrome, Firefox, Safari, Edge, Opera). Blocking some cookies may affect how the site works.", "cook_h5": "Consent", "cook_p4": "By continuing to browse El Capricho de Costa del Silencio, you accept the use of these cookies as described in this policy. You can change your decision at any time by deleting cookies from your browser.", "cookie_text": "We use first- and third-party cookies to improve your experience and analyse browsing. You can accept, reject or customise their use. More information in our Cookie policy.", "cookie_accept": "Accept", "cookie_customize": "Customize", "cookie_reject": "Reject", "nav_carta": "Menu", "carta_eyebrow": "Our menu", "carta_title1": "Real prices", "carta_title2": "updated live", "carta_sub": "Synced directly with our point of sale: always up to date.", "carta_loading": "Loading the menu…", "carta_full_link": "See the full menu online →", "carta_error": "The menu could not be loaded right now. Check it directly here."}};
+
+  let currentLang = localStorage.getItem('capricho_lang') || 'es';
+
+  function applyTranslations(lang){
+    const dict = I18N[lang] || I18N.es;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key]) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key]) el.setAttribute('placeholder', dict[key]);
+    });
+    document.documentElement.lang = lang;
+    document.getElementById('langFlag').textContent = FLAGS[lang];
+    document.getElementById('langCode').textContent = lang.toUpperCase();
+    document.querySelectorAll('.lang-menu button').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+  }
+
+  const SERVICE_EMAIL = {es:'atencionalcliente@elcaprichodecostadelsilencio.com', en:'customercare@elcaprichodecostadelsilencio.com'};
+
+  function setLanguage(lang){
+    currentLang = lang;
+    localStorage.setItem('capricho_lang', lang);
+    applyTranslations(lang);
+    const mc = document.getElementById('mcService');
+    if (mc) {
+      const email = SERVICE_EMAIL[lang] || SERVICE_EMAIL.es;
+      mc.href = 'mailto:' + email;
+      mc.textContent = email;
+    }
+    if (typeof cartaData !== 'undefined' && cartaData) renderCartaTabs();
+  }
+
+  const langSwitch = document.getElementById('langSwitch');
+  const langBtn = document.getElementById('langBtn');
+  langBtn.addEventListener('click', (e) => { e.stopPropagation(); langSwitch.classList.toggle('open'); });
+  document.querySelectorAll('.lang-menu button').forEach(b => {
+    b.addEventListener('click', () => { setLanguage(b.getAttribute('data-lang')); langSwitch.classList.remove('open'); });
+  });
+  document.addEventListener('click', (e) => { if (!langSwitch.contains(e.target)) langSwitch.classList.remove('open'); });
+
+  /* ================= CARTA (live menu, synced via GitHub) ================= */
+  const CARTA_URL = 'https://menu.elcaprichodecostadelsilencio.com/menu-data.json';
+  const CATEGORY_EN = {
+    'Productos en mesa': 'Table products',
+    'Platos elaborados con conservas': 'Dishes made with preserves',
+    'Conservas Cambados': 'Cambados preserves',
+    'Conservas Real Conservera': 'Real Conservera preserves',
+    'Anchoas': 'Anchovies',
+    'Loncheados': 'Sliced cold cuts',
+    'Taquitos': 'Diced bites',
+    'Bocadillos ibéricos': 'Ibérico sandwiches',
+    'Montaditos': 'Mini sandwiches',
+    'Quesos': 'Cheeses',
+    'Snacks': 'Snacks',
+    'Smoothies': 'Smoothies',
+    'Café': 'Coffee',
+    'Vino por copas': 'Wine by the glass',
+    'Vino blanco afrutado': 'Fruity white wine',
+    'Vino blanco seco': 'Dry white wine',
+  };
+
+  let cartaData = null;
+  let cartaCat = 0;
+
+  function cleanItemName(name){
+    const stripped = name.replace(/^\d+\s*-?\s*/, '').trim();
+    return stripped.charAt(0).toUpperCase() + stripped.slice(1);
+  }
+  function formatPrice(p){
+    return p.replace('.', ',') + ' €';
+  }
+
+  function renderCartaTabs(){
+    const tabsEl = document.getElementById('cartaTabs');
+    if (!tabsEl || !cartaData) return;
+    tabsEl.innerHTML = '';
+    cartaData.forEach((cat, i) => {
+      const b = document.createElement('button');
+      b.className = 'menu-tab' + (i === cartaCat ? ' active' : '');
+      b.textContent = currentLang === 'en' ? (CATEGORY_EN[cat.category] || cat.category) : cat.category;
+      b.addEventListener('click', () => { cartaCat = i; renderCartaTabs(); renderCartaPanel(); });
+      tabsEl.appendChild(b);
+    });
+  }
+
+  function renderCartaPanel(){
+    const panel = document.getElementById('cartaPanel');
+    if (!panel || !cartaData) return;
+    panel.innerHTML = '';
+    const cat = cartaData[cartaCat];
+    cat.items.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'menu-item';
+      const nameEl = document.createElement('div');
+      nameEl.className = 'mi-name';
+      nameEl.textContent = cleanItemName(item.name);
+      const priceEl = document.createElement('div');
+      priceEl.className = 'mi-price';
+      priceEl.textContent = formatPrice(item.price);
+      row.appendChild(nameEl);
+      row.appendChild(priceEl);
+      panel.appendChild(row);
+    });
+  }
+
+  async function loadCarta(){
+    try {
+      const res = await fetch(CARTA_URL);
+      if (!res.ok) throw new Error('bad response');
+      const data = await res.json();
+      cartaData = data.categories;
+      renderCartaTabs();
+      renderCartaPanel();
+    } catch (err) {
+      const tabsEl = document.getElementById('cartaTabs');
+      const panelEl = document.getElementById('cartaPanel');
+      if (tabsEl) tabsEl.innerHTML = '';
+      if (panelEl) panelEl.innerHTML = '<p style="color:var(--text-soft);padding:10px 0;" data-i18n="carta_error">No se pudo cargar la carta en este momento. Consúltala directamente aquí.</p>';
+      applyTranslations(currentLang);
+    }
+  }
+  loadCarta();
+
+  setLanguage(currentLang);
+
+  /* ================= FORM TABS ================= */
+  const tabReserve = document.getElementById('tabReserve');
+  const tabOrder = document.getElementById('tabOrder');
+  const panelReserve = document.getElementById('panelReserve');
+  const panelOrder = document.getElementById('panelOrder');
+  tabReserve.addEventListener('click', () => {
+    tabReserve.classList.add('active'); tabOrder.classList.remove('active');
+    panelReserve.classList.add('active'); panelOrder.classList.remove('active');
+  });
+  tabOrder.addEventListener('click', () => {
+    tabOrder.classList.add('active'); tabReserve.classList.remove('active');
+    panelOrder.classList.add('active'); panelReserve.classList.remove('active');
+  });
+
+  /* ================= FORMS ================= */
+  const RESERVE_EMAIL = {es:'reservas@elcaprichodecostadelsilencio.com', en:'bookings@elcaprichodecostadelsilencio.com'};
+  const ORDER_EMAIL = {es:'pedidos@elcaprichodecostadelsilencio.com', en:'orders@elcaprichodecostadelsilencio.com'};
+
+  document.getElementById('reserveForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('r_name').value;
+    const people = document.getElementById('r_people').value;
+    const date = document.getElementById('r_date').value;
+    const time = document.getElementById('r_time').value;
+    const message = document.getElementById('r_message').value;
+    const email = RESERVE_EMAIL[currentLang] || RESERVE_EMAIL.es;
+    const subject = encodeURIComponent('Reserva - ' + name);
+    const body = encodeURIComponent(
+      'Nombre: ' + name + '\n' +
+      'Personas: ' + people + '\n' +
+      'Fecha: ' + date + '\n' +
+      'Hora: ' + time + '\n' +
+      'Mensaje: ' + (message || '-')
+    );
+    window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  });
+
+  document.getElementById('orderForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('o_name').value;
+    const contact = document.getElementById('o_contact').value;
+    const products = document.getElementById('o_products').value;
+    const message = document.getElementById('o_message').value;
+    const email = ORDER_EMAIL[currentLang] || ORDER_EMAIL.es;
+    const subject = encodeURIComponent('Pedido - ' + name);
+    const body = encodeURIComponent(
+      'Nombre: ' + name + '\n' +
+      'Email o teléfono: ' + contact + '\n' +
+      'Pedido: ' + products + '\n' +
+      'Mensaje: ' + (message || '-')
+    );
+    window.location.href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
