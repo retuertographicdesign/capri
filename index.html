@@ -496,9 +496,34 @@
   .to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
   .to-top:hover{background:var(--gold-light);}
   .to-top svg{width:20px;height:20px;}
+
+  /* ---------- ANNOUNCEMENT POPUP ---------- */
+  .announce-modal{
+    position:fixed;inset:0;background:rgba(12,16,32,.82);
+    display:flex;align-items:center;justify-content:center;padding:24px;
+    z-index:400;opacity:0;pointer-events:none;transition:opacity .3s ease;
+  }
+  .announce-modal.show{opacity:1;pointer-events:auto;}
+  .announce-box{position:relative;max-width:480px;width:100%;}
+  .announce-box img{width:100%;border-radius:14px;box-shadow:0 30px 70px rgba(0,0,0,.5);display:block;}
+  .announce-close{
+    position:absolute;top:-14px;right:-14px;width:36px;height:36px;border-radius:50%;
+    background:var(--gold);color:var(--ink);border:none;font-size:1.4rem;line-height:1;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.35);
+    transition:background .2s ease;
+  }
+  .announce-close:hover{background:var(--gold-light);}
 </style>
 </head>
 <body>
+
+<!-- ================= ANNOUNCEMENT POPUP ================= -->
+<div class="announce-modal" id="announceModal">
+  <div class="announce-box">
+    <button class="announce-close" id="announceClose" aria-label="Cerrar">&times;</button>
+    <img src="img/aviso-cierre.jpeg" alt="Aviso: cerrado el sábado 5 de septiembre por formación / Closed Saturday September 5th for training">
+  </div>
+</div>
 
 <!-- ================= HEADER ================= -->
 <header id="site-header">
@@ -912,6 +937,13 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ================= ANNOUNCEMENT POPUP ================= */
+  const announceModal = document.getElementById('announceModal');
+  const announceClose = document.getElementById('announceClose');
+  announceModal.classList.add('show');
+  announceClose.addEventListener('click', () => announceModal.classList.remove('show'));
+  announceModal.addEventListener('click', (e) => { if (e.target === announceModal) announceModal.classList.remove('show'); });
 
   const header = document.getElementById('site-header');
   const toTop = document.getElementById('toTop');
