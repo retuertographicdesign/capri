@@ -941,7 +941,10 @@
   /* ================= ANNOUNCEMENT POPUP ================= */
   const announceModal = document.getElementById('announceModal');
   const announceClose = document.getElementById('announceClose');
-  announceModal.classList.add('show');
+  const ANNOUNCE_HIDE_FROM = new Date('2026-09-06T00:00:00');
+  if (new Date() < ANNOUNCE_HIDE_FROM) {
+    announceModal.classList.add('show');
+  }
   announceClose.addEventListener('click', () => announceModal.classList.remove('show'));
   announceModal.addEventListener('click', (e) => { if (e.target === announceModal) announceModal.classList.remove('show'); });
 
