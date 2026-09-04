@@ -135,8 +135,8 @@
     .nav-links.open{transform:translateX(0);}
     .nav-links a:not(.btn){color:var(--ink);}
     .nav-links a.btn{margin-top:10px;}
-    .burger{display:block;z-index:110;}
-    .lang-switch{order:-1;margin-right:auto;}
+    .burger{display:block;z-index:110;order:-1;}
+    .brand{flex:1;justify-content:center;}
   }
 
   /* ---------- HERO ---------- */
@@ -331,7 +331,7 @@
   .hours-grid{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;margin-top:2px;}
   .hours-grid span:nth-child(odd){color:#8a7f68;}
   .hours-grid span.closed{color:#b0a68f;font-style:italic;}
-  .socials{display:flex;gap:14px;}
+  .socials{display:flex;gap:14px;flex-wrap:wrap;}
   .socials a{
     width:40px;height:40px;border-radius:50%;border:1px solid rgba(20,25,43,.2);
     display:flex;align-items:center;justify-content:center;color:var(--ink);
@@ -718,6 +718,9 @@
         <div class="socials">
           <a href="https://www.instagram.com/elcaprichodecostadelsilencio/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 448 512" fill="currentColor"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
           <a href="https://www.facebook.com/elcaprichocostadelsilencio/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg></a>
+          <a href="https://www.linkedin.com/company/112948152/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 448 512" fill="currentColor"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.09 107 0 82.85 0 53.19a53.19 53.19 0 0 1 106.38 0c0 29.66-24.1 53.81-53.55 53.81zM447.9 448h-92.68V302.4c0-34.7-.7-79.29-48.29-79.29-48.29 0-55.69 37.69-55.69 76.66V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3z"/></svg></a>
+          <a href="https://www.tripadvisor.dk/Restaurant_Review-g187482-d34399097-Reviews-El_Capricho_de_Costa_del_Silencio-Santa_Cruz_de_Tenerife_Tenerife_Canary_Islands.html" target="_blank" rel="noopener" aria-label="Reseñas en TripAdvisor" title="TripAdvisor"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="13" r="9.5" fill="#34E0A1"/><circle cx="7.8" cy="13" r="3.3" fill="#fff"/><circle cx="16.2" cy="13" r="3.3" fill="#fff"/><circle cx="7.8" cy="13" r="1.35" fill="#00302A"/><circle cx="16.2" cy="13" r="1.35" fill="#00302A"/><path d="M8.2 5.2C9.6 4.4 10.8 4 12 4s2.4.4 3.8 1.2" fill="none" stroke="#34E0A1" stroke-width="1.6" stroke-linecap="round"/></svg></a>
+          <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0xc6aa309cea488b3:0xa9756eabadb74d70?sa=X&ved=1t:8290&ictx=111" target="_blank" rel="noopener" aria-label="Reseñas en Google" title="Google"><svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="10" fill="#fff"/><text x="12" y="16.5" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial, sans-serif" fill="#4285F4">G</text></svg></a>
         </div>
 
         <div class="map-box">
