@@ -1,0 +1,13 @@
+{
+  "posts": [
+    {
+      "slug": "estrenamos-novedades",
+      "date": "2026-09-05",
+      "image": "img/jamon-closeup.jpg",
+      "title_es": "Estrenamos sección de novedades",
+      "excerpt_es": "A partir de ahora, aquí iremos contando lo que se cuece en la tienda: catas especiales, productos nuevos, horarios fuera de lo normal y alguna que otra excusa para venir a probar algo.",
+      "title_en": "We're launching our news section",
+      "excerpt_en": "From now on, this is where we'll share what's happening at the shop: special tastings, new products, unusual schedules, and the occasional good excuse to come try something."
+    }
+  ]
+}
