@@ -517,3 +517,15 @@
   .post-body h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--ink);margin:36px 0 14px;}
   .post-back{display:inline-block;margin-top:10px;color:var(--gold);font-weight:700;font-size:.9rem;}
   .post-back:hover{color:var(--ink);}
+
+  /* ---------- COMPARTIR (post individual) ---------- */
+  .post-share{display:flex;align-items:center;gap:14px;margin-top:32px;padding-top:24px;border-top:1px solid rgba(20,25,43,.1);flex-wrap:wrap;}
+  .post-share .share-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text-soft);}
+  .socials button{
+    width:40px;height:40px;border-radius:50%;border:1px solid rgba(20,25,43,.2);
+    display:flex;align-items:center;justify-content:center;color:var(--ink);background:none;cursor:pointer;
+    transition:background .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+  }
+  .socials button svg{width:17px;height:17px;}
+  .socials button:hover{background:var(--gold);border-color:var(--gold);color:var(--ink);transform:translateY(-3px);}
+  .socials button.copied{background:var(--ink);border-color:var(--ink);color:#fff;}
