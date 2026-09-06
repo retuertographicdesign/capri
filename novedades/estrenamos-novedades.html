@@ -80,6 +80,10 @@ apiUrl: "https://api.biscotti-cmp.com/api/v1"
       <p>This won't be a recipe blog or a deep dive into ham theory — there are people who actually know that stuff for that. Here you'll find practical notices (special hours, occasional closures), new products as they arrive, and tastings or events worth knowing about in advance.</p>
       <p>If you follow us on Instagram, you already know the tone. Same thing here, just with more room to explain ourselves and no character limit.</p>
     </div>
+    <div class="post-share">
+      <span class="share-label" data-i18n="share_label">Compartir:</span>
+      <div class="socials" id="shareIcons"></div>
+    </div>
     <a class="post-back" href="../novedades.html" data-i18n="post_back">← Volver a novedades</a>
   </div>
 </section>
@@ -173,11 +177,13 @@ apiUrl: "https://api.biscotti-cmp.com/api/v1"
   const POST_ES_TITLE = 'Estrenamos sección de novedades';
   const POST_EN_TITLE = "We're launching our news section";
   const POST_DATE = "2026-09-05";
+  const POST_URL = "https://elcaprichodecostadelsilencio.com/novedades/estrenamos-novedades.html";
   function onLanguageChange(lang){
     document.getElementById('postTitle').textContent = lang === 'en' ? POST_EN_TITLE : POST_ES_TITLE;
     document.getElementById('postDate').textContent = new Date(POST_DATE + 'T00:00:00').toLocaleDateString(lang === 'en' ? 'en-GB' : 'es-ES', {day:'numeric', month:'long', year:'numeric'});
     document.getElementById('postContentEs').style.display = lang === 'en' ? 'none' : 'block';
     document.getElementById('postContentEn').style.display = lang === 'en' ? 'block' : 'none';
+    if (window.CapriShare) CapriShare.render('shareIcons', POST_URL, lang === 'en' ? POST_EN_TITLE : POST_ES_TITLE);
   }
 </script>
 <script src="../assets/site-common.js"></script>
