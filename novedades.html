@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Novedades · El Capricho de Costa del Silencio</title>
+<meta name="description" content="Novedades de El Capricho de Costa del Silencio: catas especiales, productos nuevos y noticias de nuestra tienda gourmet en Tenerife.">
+<meta property="og:title" content="Novedades · El Capricho de Costa del Silencio">
+<meta property="og:description" content="Catas especiales, productos nuevos y noticias de nuestra tienda gourmet en Tenerife.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elcaprichodecostadelsilencio.com/novedades.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2314192B'/%3E%3Ctext x='50' y='66' text-anchor='middle' font-size='54' fill='%23C9A227' font-family='Georgia,serif'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/site.css">
+<script src="https://api.biscotti-cmp.com/scripts/biscotti-boot.js"></script>
+<script>
+window.BiscottiConfig = {
+websiteId: "3cb3f3db-aba1-4e80-b52c-1565b251f432",
+apiUrl: "https://api.biscotti-cmp.com/api/v1"
+};
+</script>
+<script src="https://api.biscotti-cmp.com/scripts/biscotti.min.js" defer></script>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+    <nav>
+      <a href="index.html#inicio" class="brand">
+        <span class="badge"><img src="img/logo-hero.png" alt="El Capricho de Costa del Silencio"></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#inicio" data-i18n="nav_home">Inicio</a></li>
+        <li><a href="index.html#nosotros" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="index.html#seleccion" data-i18n="nav_selection">Selección</a></li>
+        <li><a href="index.html#carta" data-i18n="nav_carta">Carta</a></li>
+        <li><a href="novedades.html" data-i18n="nav_novedades">Novedades</a></li>
+        <li><a href="index.html#galeria" data-i18n="nav_gallery">Galería</a></li>
+        <li><a href="index.html#contacto" data-i18n="nav_contact">Contacto</a></li>
+        <li><a href="index.html#contacto" class="btn" data-i18n="nav_book">Reserva tu cata</a></li>
+      </ul>
+
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn" id="langBtn"><span class="flag" id="langFlag">🇪🇸</span><span id="langCode">ES</span></button>
+        <div class="lang-menu" id="langMenu">
+          <button data-lang="es"><span class="flag">🇪🇸</span> Español</button>
+          <button data-lang="en"><span class="flag">🇬🇧</span> English</button>
+        </div>
+      </div>
+
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú">☰</button>
+    </nav>
+  </div>
+</header>
+
+
+<section class="novedades-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="novedades_eyebrow">Últimas noticias</span>
+    <h1><span data-i18n="novedades_title1">Lo nuevo en</span><span class="accent" data-i18n="novedades_title2">El Capricho</span></h1>
+  </div>
+</section>
+
+<section class="novedades-list">
+  <div class="wrap">
+    <div class="nov-grid" id="novGrid">
+      <div class="nov-empty" data-i18n="novedades_empty">Todavía no hay novedades publicadas. Vuelve pronto.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-brand">
+      <span class="badge"><img src="img/logo-hero.png" alt="El Capricho de Costa del Silencio"></span>
+      <span>© <span id="year"></span> El Capricho de Costa del Silencio</span>
+    </div>
+    <div class="legal-links">
+      <button type="button" data-legal-tab="aviso" data-i18n="footer_legal">Aviso legal</button>
+      <button type="button" data-legal-tab="privacidad" data-i18n="footer_privacy">Política de privacidad</button>
+      <button type="button" data-legal-tab="cookies" data-i18n="footer_cookies">Política de cookies</button>
+    </div>
+    <a href="index.html#contacto" class="book" data-i18n="nav_book">Reserva tu cata</a>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- ================= LEGAL MODAL ================= -->
+<div class="legal-modal" id="legalModal">
+  <div class="legal-box">
+    <div class="legal-head">
+      <h3 id="legalModalTitle" data-i18n="legal_modal_title">Información legal</h3>
+      <button class="legal-close" id="legalClose" aria-label="Cerrar">&times;</button>
+    </div>
+    <div class="legal-tabs">
+      <button class="legal-tab active" data-legal-panel="aviso" data-i18n="footer_legal">Aviso legal</button>
+      <button class="legal-tab" data-legal-panel="privacidad" data-i18n="footer_privacy">Política de privacidad</button>
+      <button class="legal-tab" data-legal-panel="cookies" data-i18n="footer_cookies">Política de cookies</button>
+    </div>
+    <div class="legal-body">
+
+      <div class="legal-panel active" id="legalPanelAviso">
+        <p data-i18n="aviso_p1">En cumplimiento del deber de información del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), se informa de que el titular de este sitio web es Jonathan Álvarez Abreu, NIF 54047787H, con domicilio en Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife.</p>
+        <p data-i18n="aviso_p2">El Capricho de Costa del Silencio no asume responsabilidad derivada de la falta de veracidad, integridad, actualización o precisión de los datos e informaciones contenidos en estas páginas.</p>
+        <p data-i18n="aviso_p3">Los textos, imágenes, logotipo y demás contenidos de este sitio son propiedad de El Capricho de Costa del Silencio o de sus licenciantes. Queda prohibida su reproducción, distribución o comunicación pública sin consentimiento expreso.</p>
+        <p data-i18n="aviso_p4">Para acceder a algunos servicios (reserva de catas, pedidos de tienda) deberás facilitar datos personales, tratados conforme al Reglamento (UE) 2016/679 (RGPD). Puedes ejercer tus derechos escribiendo a <a href="mailto:protecciondedatos@elcaprichodecostadelsilencio.com">protecciondedatos@elcaprichodecostadelsilencio.com</a> o en la dirección indicada arriba.</p>
+      </div>
+
+      <div class="legal-panel" id="legalPanelPrivacidad">
+        <h4 data-i18n="priv_h1">Protección de datos según el RGPD</h4>
+        <p data-i18n="priv_p1">Los datos personales que recogemos a través de los formularios de este sitio web (reserva de cata y pedidos de tienda) se incorporan a los ficheros de Jonathan Álvarez Abreu, responsable de El Capricho de Costa del Silencio.</p>
+        <h4 data-i18n="priv_h2">¿Con qué finalidad tratamos tus datos?</h4>
+        <ul>
+          <li data-i18n="priv_l1">Gestionar tu reserva de cata o degustación.</li>
+          <li data-i18n="priv_l2">Gestionar tu pedido de productos de la tienda.</li>
+          <li data-i18n="priv_l3">Responder a tus consultas de atención al cliente.</li>
+          <li data-i18n="priv_l4">Enviarte información comercial, solo si nos has dado tu consentimiento expreso.</li>
+        </ul>
+        <h4 data-i18n="priv_h3">¿Por cuánto tiempo los conservamos?</h4>
+        <p data-i18n="priv_p2">Mientras exista una relación comercial contigo o hasta que solicites su supresión, y durante el plazo en que pudieran derivarse responsabilidades legales.</p>
+        <h4 data-i18n="priv_h4">Legitimación y destinatarios</h4>
+        <p data-i18n="priv_p3">El tratamiento se basa en tu solicitud de información o reserva, y en tu consentimiento expreso cuando corresponda. Tus datos no se ceden a terceros ajenos a El Capricho de Costa del Silencio, salvo obligación legal.</p>
+        <h4 data-i18n="priv_h5">Tus derechos</h4>
+        <p data-i18n="priv_p4">Puedes ejercer en cualquier momento tus derechos de acceso, rectificación, cancelación, oposición, limitación y portabilidad escribiendo a <a href="mailto:protecciondedatos@elcaprichodecostadelsilencio.com">protecciondedatos@elcaprichodecostadelsilencio.com</a> o en Av. José Antonio Tavío, C.C. Chaparral, 38630, Santa Cruz de Tenerife. También puedes oponerte al envío de comunicaciones comerciales en cualquier momento, por el mismo medio.</p>
+        <h4 data-i18n="priv_h6">Propiedad intelectual</h4>
+        <p data-i18n="priv_p5">Todos los contenidos de este sitio (textos, imágenes, logotipo) son propiedad de El Capricho de Costa del Silencio o de sus licenciantes y están protegidos por la normativa de propiedad intelectual. Queda prohibido su uso no autorizado.</p>
+      </div>
+
+      <div class="legal-panel" id="legalPanelCookies">
+        <h4 data-i18n="cook_h1">¿Qué son las cookies?</h4>
+        <p data-i18n="cook_p1">Las cookies son archivos que se descargan en tu equipo al visitar una página web y permiten almacenar y recuperar información sobre tus hábitos de navegación.</p>
+        <h4 data-i18n="cook_h2">Cookies que utilizamos</h4>
+        <p data-i18n="cook_p2">Este sitio usa cookies técnicas necesarias para su funcionamiento (por ejemplo, para recordar tu idioma preferido) y puede cargar contenido de terceros, como el mapa de Google Maps incrustado, que puede instalar sus propias cookies conforme a la política de privacidad de Google.</p>
+        <h4 data-i18n="cook_h3">Tipos de cookies</h4>
+        <ul>
+          <li data-i18n="cook_l1">Cookies propias: gestionadas directamente por El Capricho de Costa del Silencio (p. ej., para recordar tu idioma).</li>
+          <li data-i18n="cook_l2">Cookies de terceros: instaladas por servicios externos incrustados en la web (p. ej., Google Maps).</li>
+          <li data-i18n="cook_l3">Cookies técnicas: necesarias para la navegación y el funcionamiento básico del sitio.</li>
+          <li data-i18n="cook_l4">Cookies de personalización: recuerdan tus preferencias, como el idioma.</li>
+        </ul>
+        <h4 data-i18n="cook_h4">Cómo gestionar las cookies</h4>
+        <p data-i18n="cook_p3">Puedes permitir, bloquear o eliminar las cookies desde la configuración de tu navegador (Chrome, Firefox, Safari, Edge, Opera). Bloquear algunas cookies puede afectar al funcionamiento del sitio.</p>
+        <h4 data-i18n="cook_h5">Consentimiento</h4>
+        <p data-i18n="cook_p4">Al continuar navegando por El Capricho de Costa del Silencio, aceptas el uso de estas cookies según lo descrito en esta política. Puedes cambiar tu decisión en cualquier momento eliminando las cookies desde tu navegador.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script src="assets/i18n.js"></script>
+<script>
+  let novedadesCache = null;
+  async function renderPosts(lang){
+    const grid = document.getElementById('novGrid');
+    try{
+      if (!novedadesCache){
+        const res = await fetch('novedades-data.json', {cache: 'no-store'});
+        novedadesCache = (await res.json()).posts || [];
+      }
+      const posts = [...novedadesCache].sort((a,b) => new Date(b.date) - new Date(a.date));
+      if (!posts.length){
+        grid.innerHTML = `<div class="nov-empty">${I18N[lang].novedades_empty}</div>`;
+        return;
+      }
+      grid.innerHTML = posts.map(p => {
+        const title = lang === 'en' ? (p.title_en || p.title_es) : p.title_es;
+        const excerpt = lang === 'en' ? (p.excerpt_en || p.excerpt_es) : p.excerpt_es;
+        const dateStr = new Date(p.date + 'T00:00:00').toLocaleDateString(lang === 'en' ? 'en-GB' : 'es-ES', {day:'numeric', month:'long', year:'numeric'});
+        return `<article class="nov-card">
+          <div class="thumb"><img src="${p.image}" alt="${title}" loading="lazy"></div>
+          <div class="body">
+            <div class="nov-date">${dateStr}</div>
+            <h3>${title}</h3>
+            <p>${excerpt}</p>
+            <a class="read-more" href="novedades/${p.slug}.html">${I18N[lang].read_more}</a>
+          </div>
+        </article>`;
+      }).join('');
+    }catch(err){
+      grid.innerHTML = `<div class="nov-empty">${I18N[lang].novedades_empty}</div>`;
+    }
+  }
+  function onLanguageChange(lang){ renderPosts(lang); }
+</script>
+<script src="assets/site-common.js"></script>
+<script>renderPosts(localStorage.getItem('capricho_lang') || 'es');</script>
+
+</body>
+</html>
