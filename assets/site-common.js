@@ -72,4 +72,38 @@ if (siteLangSwitch && siteLangBtn) {
   document.addEventListener('click', () => siteLangSwitch.classList.remove('open'));
 }
 
+
+/* ============= COMPARTIR (WhatsApp, Facebook, X, copiar enlace) ============= */
+window.CapriShare = {
+  render(containerId, url, title) {
+    const el = document.getElementById(containerId);
+    if (!el) return;
+    const u = encodeURIComponent(url);
+    const t = encodeURIComponent(title);
+    const icons = {
+      whatsapp: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.4 5L2 22l5.2-1.4c1.4.8 3.1 1.2 4.8 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.1.8.8-3-.2-.3C4 14 3.5 13 3.5 12c0-4.7 3.8-8.5 8.5-8.5s8.5 3.8 8.5 8.5-3.8 8.5-8.5 8.5z"/><path d="M17.1 14.4c-.3-.1-1.6-.8-1.9-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.6-2.1-.2-.3 0-.5.1-.6.1-.1.3-.4.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.6-1.5-.9-2.1-.2-.5-.5-.5-.6-.5h-.6c-.2 0-.5.1-.7.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.6-.7 1.9-1.3.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.4z"/></svg>',
+      facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7C18.3 21.1 22 17 22 12z"/></svg>',
+      x: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.9l-5.4-6.9L4.8 22H1.7l8.1-9.3L1 2h7l4.9 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>',
+      link: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l2-2a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.5-.5l-2 2a5 5 0 0 0 7 7l1.5-1.5"/></svg>',
+    };
+    const links = [
+      { href: `https://wa.me/?text=${t}%20${u}`, label: 'WhatsApp', icon: icons.whatsapp },
+      { href: `https://www.facebook.com/sharer/sharer.php?u=${u}`, label: 'Facebook', icon: icons.facebook },
+      { href: `https://twitter.com/intent/tweet?url=${u}&text=${t}`, label: 'X', icon: icons.x },
+    ];
+    el.innerHTML = links.map(l =>
+      `<a href="${l.href}" target="_blank" rel="noopener noreferrer" aria-label="${l.label}">${l.icon}</a>`
+    ).join('') + `<button type="button" class="share-copy" aria-label="Copiar enlace">${icons.link}</button>`;
+
+    const copyBtn = el.querySelector('.share-copy');
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(url);
+        copyBtn.classList.add('copied');
+        setTimeout(() => copyBtn.classList.remove('copied'), 1800);
+      } catch (e) { /* silencioso */ }
+    });
+  }
+};
+
 setLanguage(currentLang);
