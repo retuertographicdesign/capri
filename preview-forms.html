@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vista previa - formularios embebidos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  body{ background:var(--paper); padding:60px 20px; }
+  .preview-wrap{ max-width:700px; margin:0 auto; }
+  .preview-note{ font-family:'Poppins',sans-serif; color:var(--text-soft); text-align:center; margin-bottom:30px; }
+</style>
+</head>
+<body>
+<div class="preview-wrap">
+  <p class="preview-note">Vista previa — esta página NO sustituye nada, es solo para revisión.</p>
+  <div class="form-card" id="embedFormCard">
+        <div class="form-tabs">
+          <button class="form-tab active" id="tabCatas" data-i18n="tab_catas">Catas</button>
+          <button class="form-tab" id="tabTienda" data-i18n="tab_tienda">Tienda</button>
+          <button class="form-tab" id="tabContacto" data-i18n="tab_contacto">Contacto</button>
+        </div>
+
+        <div class="form-panel active" id="panelCatas" style="padding:0;">
+          <iframe id="iframeCatas" title="Reserva tu cata" style="width:100%;height:660px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;" loading="lazy"></iframe>
+        </div>
+
+        <div class="form-panel" id="panelTienda" style="padding:0;">
+          <iframe id="iframeTienda" title="Solicita tu pedido" style="width:100%;height:560px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;" loading="lazy"></iframe>
+        </div>
+
+        <div class="form-panel" id="panelContacto" style="padding:0;">
+          <iframe id="iframeContacto" title="Escríbenos" style="width:100%;height:360px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;" loading="lazy"></iframe>
+        </div>
+      </div>
+</div>
+
+<script src="assets/i18n.js"></script>
+<script>
+  const EMBED_URLS = {
+    catas:    { es: 'https://crmapi.retuertographicdesign.com/form/11bf0a57-9c73-336b-a9ad-ef6865a8aebd', en: 'https://crmapi.retuertographicdesign.com/form/65486277-71c5-3765-9146-b1a5d9cae914' },
+    tienda:   { es: 'https://crmapi.retuertographicdesign.com/form/42b92846-d4a4-3e1a-a4c1-4f1e6a7b015a', en: 'https://crmapi.retuertographicdesign.com/form/0ca7dda8-9f6d-3092-b90b-00c2e373e58c' },
+    contacto: { es: 'https://crmapi.retuertographicdesign.com/form/1cb9b99b-d147-3a68-a83c-2646e0f4f535', en: 'https://crmapi.retuertographicdesign.com/form/362fb84a-dfe3-369c-a01f-99c4784245f4' },
+  };
+  function updateEmbedForms(lang){
+    const l = lang === 'en' ? 'en' : 'es';
+    document.getElementById('iframeCatas').src = EMBED_URLS.catas[l];
+    document.getElementById('iframeTienda').src = EMBED_URLS.tienda[l];
+    document.getElementById('iframeContacto').src = EMBED_URLS.contacto[l];
+  }
+  const formTabs = [
+    { tab: document.getElementById('tabCatas'), panel: document.getElementById('panelCatas') },
+    { tab: document.getElementById('tabTienda'), panel: document.getElementById('panelTienda') },
+    { tab: document.getElementById('tabContacto'), panel: document.getElementById('panelContacto') },
+  ];
+  formTabs.forEach(({ tab }) => {
+    tab.addEventListener('click', () => {
+      formTabs.forEach(({ tab: t, panel: p }) => {
+        t.classList.toggle('active', t === tab);
+        p.classList.toggle('active', t === tab);
+      });
+    });
+  });
+  updateEmbedForms('es');
+</script>
+</body>
+</html>
