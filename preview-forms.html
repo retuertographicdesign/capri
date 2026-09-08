@@ -25,17 +25,24 @@
         </div>
 
         <div class="form-panel active" id="panelCatas" style="padding:0;">
-          <iframe id="iframeCatas" title="Reserva tu cata" style="width:100%;height:660px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;" loading="lazy"></iframe>
+          <iframe id="iframeCatas" title="Reserva tu cata" scrolling="no" style="width:100%;height:920px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;overflow:hidden;" loading="lazy"></iframe>
         </div>
 
         <div class="form-panel" id="panelTienda" style="padding:0;">
-          <iframe id="iframeTienda" title="Solicita tu pedido" style="width:100%;height:560px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;" loading="lazy"></iframe>
+          <iframe id="iframeTienda" title="Solicita tu pedido" scrolling="no" style="width:100%;height:860px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;overflow:hidden;" loading="lazy"></iframe>
         </div>
 
         <div class="form-panel" id="panelContacto" style="padding:0;">
-          <iframe id="iframeContacto" title="Escríbenos" style="width:100%;height:360px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;" loading="lazy"></iframe>
+          <iframe id="iframeContacto" title="Escríbenos" scrolling="no" style="width:100%;height:680px;border:0;border-radius:0 0 22px 22px;display:block;background:transparent;overflow:hidden;" loading="lazy"></iframe>
         </div>
       </div>
+      <style>
+        @media (max-width:480px){
+          #iframeCatas{ height:1000px !important; }
+          #iframeTienda{ height:940px !important; }
+          #iframeContacto{ height:740px !important; }
+        }
+      </style>
 </div>
 
 <script src="assets/i18n.js"></script>
